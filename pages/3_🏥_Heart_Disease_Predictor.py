@@ -33,7 +33,7 @@ def user_input_features():
         LastCheckupTime = st.sidebar.selectbox("Last Checkup?", ("< 1 year", "< 2 years", "< 5 years", "5+ years"))
         PhysicalActivities = st.sidebar.selectbox("Are you physically active?", ("No", "Yes")),
         SleepHours = st.sidebar.slider("How long do you sleep each day?", 1.0, 24.0, 8.0)
-        RemovedTeeth = st.sidebar.selectbox("How many teeth do you have removed?", ("0", "1-5", "6+", "All"))
+        RemovedTeeth = st.sidebar.selectbox("How many teeth do you have removed?", ("0", "1 to 5", "6+", "All"))
         HadStroke = st.sidebar.selectbox("Have you ever had a stroke?", ("No", "Yes")),
         HadAsthma = st.sidebar.selectbox("Have you ever had asthma?", ("No", "Yes")),
         HadSkinCancer = st.sidebar.selectbox("Have you ever had skin cancer?", ("No", "Yes")),
@@ -138,7 +138,7 @@ df['LastCheckupTime'] = df['LastCheckupTime'].replace(checkup_mapping)
 # Define the mapping dictionary
 teeth_mapping = {
     '0': 0,
-    '"1-5"': 1,
+    '1 to 5': 1,
     '6+': 2,
     'All': 3
 }
